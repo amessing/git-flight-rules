@@ -1,7 +1,7 @@
 # Git飞行规则(Flight Rules)
 
 🌍
-*[English](README.md) ∙ [Русский](README_ru.md) ∙ [简体中文](README_zh-cn.md)*
+*[English](README.md) ∙ [Español](README_es.md)  ∙  [Русский](README_ru.md) ∙ [简体中文](README_zh-CN.md)∙ [한국어](README_kr.md)  ∙  [Tiếng Việt](README_vi.md) ∙ [Français](README_fr.md)*
 
 #### 前言
 
@@ -87,7 +87,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-
 ## 编辑提交(editting commits)
 
 <a name="diff-last"></a>
@@ -111,12 +110,12 @@ $ git log -n1 -p
 如果你的提交信息(commit message)写错了且这次提交(commit)还没有推(push), 你可以通过下面的方法来修改提交信息(commit message):
 
 ```sh
-$ git commit --amend
+$ git commit --amend --only
 ```
 这会打开你的默认编辑器, 在这里你可以编辑信息. 另一方面, 你也可以用一条命令一次完成:
 
 ```sh
-$ git commit --amend -m 'xxxxxxx'
+$ git commit --amend --only -m 'xxxxxxx'
 ```
 
 如果你已经推(push)了这次提交(commit), 你可以修改这次提交(commit)然后强推(force push), 但是不推荐这么做。
@@ -131,7 +130,6 @@ $ git commit --amend --author "New Authorname <authoremail@mydomain.com>"
 ```
 
 如果你需要修改所有历史, 参考 'git filter-branch'的指南页.
-
 
 <a href="#i-want-to-remove-a-file-from-a-commit"></a>
 ### 我想从一个提交(commit)里移除一个文件
@@ -242,12 +240,10 @@ $ git add -N filename.x
 
 然后, 你需要用 `e` 选项来手动选择需要添加的行，执行 `git diff --cached` 将会显示哪些行暂存了哪些行只是保存在本地了。
 
-
 <a href="stage-in-two-commits"></a>
 ### 我想把在一个文件里的变化(changes)加到两个提交(commit)里
 
 `git add` 会把整个文件加入到一个提交. `git add -p` 允许交互式的选择你想要提交的部分.
-
 
 <a href="unstaging-edits-and-staging-the-unstaged"></a>
 ### 我想把暂存的内容变成未暂存，把未暂存的内容暂存起来
@@ -492,7 +488,6 @@ HEAD is now at a13b85e
 
 这时候, 这里可能会产生冲突， 参见[交互式 rebasing 章](#interactive-rebase) [**冲突节**](#merge-conflict) 解决冲突.
 
-
 再者， 我们为bug #14 创建一个新的分支, 也基于`master`分支
 
 ```sh
@@ -506,7 +501,6 @@ HEAD is now at a13b85e
 ```sh
 (14)$ git cherry-pick 5ea5173
 ```
-
 
 <a name="delete-stale-local-branches"></a>
 ### 我想删除上游(upstream)分支被删除了的本地分支
@@ -984,7 +978,6 @@ $ git reset --hard 0254ea7
 然后使用git reset就可以把master改回到之前的commit，这提供了一个在历史被意外更改情况下的安全网。
 
 ([摘自](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog)).
-
 
 # 其它资源(Other Resources)
 
